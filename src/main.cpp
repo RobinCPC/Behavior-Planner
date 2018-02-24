@@ -5,6 +5,10 @@
 #include <math.h>
 #include <vector>
 
+#include <chrono>
+#include <thread>
+
+
 using namespace std;
 
 //impacts default behavior for most states
@@ -54,6 +58,7 @@ int main() {
     road.advance();
     road.display(timestep);
     //time.sleep(float(1.0) / FRAMES_PER_SECOND);
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
   }
   Vehicle ego = road.get_ego();
   if (ego.lane == GOAL[1])

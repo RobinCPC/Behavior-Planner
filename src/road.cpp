@@ -5,6 +5,7 @@
 #include <map>
 #include <string>
 #include <iterator>
+#include <cstdlib>
 
 
 /**
@@ -106,6 +107,9 @@ void Road::add_ego(int lane_num, int s, vector<int> config_data) {
 }
 
 void Road::display(int timestep) {
+
+  // clear terminal for new drawing
+  std::system("clear");
 
   Vehicle ego = this->vehicles.find(this->ego_key)->second;
   int s = ego.s;
